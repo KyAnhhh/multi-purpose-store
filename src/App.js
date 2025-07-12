@@ -13,16 +13,17 @@ import Header from "./components/Header";
 // Pages
 import ProductPage from "./pages/ProductPage";
 import CartPage from "./pages/CartPage";
+import MainContent from "./components/MainContent";
 
 function App() {
   return (
     <CartProvider>
       <Router>
-        {/* Header luôn hiển thị trên mọi trang */}
         <Header />
-
         {/* Các trang định tuyến */}
         <Routes>
+          <Route path="/" element={<MainContent />} />
+          <Route path="/home" element={<MainContent />} />
           <Route path="/products" element={<ProductPage />} />
           <Route path="/cart" element={<CartPage />} />
         </Routes>

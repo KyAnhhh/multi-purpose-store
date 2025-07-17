@@ -5,25 +5,32 @@ import "../assets/styles/ProductPage.css";
 
 import { useCart } from "../contexts/CartContext";
 
-
 function ProductPage() {
   
   const [products, setProducts] = useState([]);
   const limit = 10;
     const [pageActive, setPageActive] = useState(0)
     const [quantityPage, setQuantityPage] = useState(0);
+    const [loading, setLoading] = useState(true);
     
-  useEffect(() => {
+useEffect(() => {
+  const fetchProducts = () => {
+    setLoading(true); // bắt đầu loading
     fetch(`https://dummyjson.com/products?skip=${pageActive*limit}&limit=${limit}`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data.products);
         setQuantityPage(Math.ceil(data.total / limit));
+        setLoading(false); // kết thúc loading
       })
       .catch((err) => {
         console.error("Lỗi khi gọi API:", err);
       });
-  }, [pageActive]);
+  }
+   setTimeout(() => {  
+      fetchProducts();
+    },1000);
+    }, [pageActive]);
 
   // Thay vì dùng alert
 const { addToCart } = useCart();
@@ -38,20 +45,28 @@ const handleAddToCart = (product) => {
      const handleClickPage = (e) =>{
         setPageActive(e);
     };
-    
+   
   return (
     <>
      <div>
      <Link to="/cart" className="btn btn-success mb-3">🛒 Xem giỏ hàng</Link>
       <h1 className="title">Danh sách sản phẩm</h1>
-    <ProductList products={products} onAddToCart={handleAddToCart} />
+    <ProductList products={products} loading={loading} onAddToCart={handleAddToCart} />
     </div>
-      <div className="pagination">
-              <h3>Trang:</h3>
-            {[...Array(quantityPage)].map((item,index) => (
-                <div className={`page-number ${index === pageActive ? "active-page" : ""}`} key={index} onClick={() => handleClickPage(index)}>{index+1}</div>
-            ))}
+     <div className="pagination">
+  <h3>Trang:</h3>
+  {Array.from({ length: quantityPage }, (_, i) => i)
+    .filter(index => Math.abs(index - pageActive) <= 2) // Hiển thị trang hiện tại ±2
+    .map((index) => (
+      <div
+        key={index}
+        className={`page-number ${index === pageActive ? "active-page" : ""}`}
+        onClick={() => handleClickPage(index)}
+      >
+        {index + 1}
       </div>
+    ))}
+</div>
     </>
     
   );

@@ -8,7 +8,7 @@ function ProductList({ products , onAddToCart, loading}) {
   if(loading){
     return(
       <div className="product-list">
-        {Array.from({ length: 10 }).map((_, index) => (
+        {Array.from({ length: 24 }).map((_, index) => (
           <div className="product-card skeleton-card" key={index}>
             <Skeleton height={150} className="product-img-skeleton" />
             <div className="product-content">

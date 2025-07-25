@@ -8,7 +8,7 @@ import { useCart } from "../contexts/CartContext";
 function ProductPage() {
   
   const [products, setProducts] = useState([]);
-  const limit = 10;
+  const limit = 24;
     const [pageActive, setPageActive] = useState(0)
     const [quantityPage, setQuantityPage] = useState(0);
     const [loading, setLoading] = useState(true);

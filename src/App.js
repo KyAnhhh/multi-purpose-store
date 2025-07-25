@@ -9,6 +9,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 // Context & Components
 import { CartProvider } from "./contexts/CartContext";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 // Pages
 import ProductPage from "./pages/ProductPage";
@@ -27,6 +28,7 @@ function App() {
           <Route path="/products" element={<ProductPage />} />
           <Route path="/cart" element={<CartPage />} />
         </Routes>
+        <Footer />
       </Router>
     </CartProvider>
   );

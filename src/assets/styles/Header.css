@@ -23,3 +23,25 @@
   box-shadow: none;
   border-color: #86b7fe;
 }
+.custom-navbar {
+  background-color: #007bff; /* xanh chủ đạo */
+  padding: 10px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.05rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #cce5ff !important;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg ..."); /* mặc định */
+}

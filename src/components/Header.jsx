@@ -27,36 +27,50 @@ const Header = () => {
         {/* Navbar content */}
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-4 me-auto mb-2 mb-lg-0">
-            {["home", "products", "about", "contact"].map((path) => (
-              <li className="nav-item" key={path}>
-                <NavLink
-                  className="nav-link text-white fw-semibold px-3"
-                  to={`/${path}`}
-                  end={path === "home"}
-                >
-                  {path.charAt(0).toUpperCase() + path.slice(1)}
-                </NavLink>
-              </li>
-            ))}
+            <li className="nav-item">
+              <NavLink className="nav-link text-white fw-semibold px-3" to="/home" end>
+                Trang chủ
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link text-white fw-semibold px-3" to="/products">
+                Sản phẩm
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link text-white fw-semibold px-3" to="/about">
+                Giới thiệu
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link text-white fw-semibold px-3" to="/contact">
+                Liên hệ
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link text-white fw-semibold px-3" to="/cart">
+                Giỏ hàng
+              </NavLink>
+            </li>
           </ul>
 
           {/* Search */}
           <form className="d-flex me-3" role="search">
-  <input
-    className="form-control me-2 rounded-pill"
-    type="search"
-    placeholder="Search"
-    aria-label="Search"
-    style={{ minWidth: "160px" }}
-  />
-  <button
-    className="btn btn-light text-primary fw-bold rounded-pill px-3 d-flex align-items-center"
-    type="submit"
-    style={{ border: "none", fontSize: "1rem" }}
-  >
-    <i className="bi bi-search"></i>
-  </button>
-</form>
+              <input
+                className="form-control me-2 rounded-pill"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                style={{ minWidth: "160px" }}
+              />
+              <button
+                className="btn btn-light text-primary fw-bold rounded-pill px-3 d-flex align-items-center"
+                type="submit"
+                style={{ border: "none", fontSize: "1rem" }}
+              >
+                <i className="bi bi-search"></i>
+              </button>
+           </form>
 
           <div className="dropdown">
             <button

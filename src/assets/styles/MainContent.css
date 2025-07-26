@@ -1,3 +1,4 @@
+/* Dịch vụ */
 .services {
   padding: 50px 20px;
   max-width: 1200px;
@@ -32,17 +33,21 @@
   font-size: 40px;
   margin-bottom: 12px;
 }
+
+/* Banner section */
 .banner-section {
-  background-image: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80");
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: auto;
-  min-height: 70vh;
   position: relative;
   overflow: hidden;
 }
 
+/* Overlay cho banner nếu dùng */
 .banner-overlay {
   position: absolute;
   top: 0;
@@ -53,7 +58,31 @@
   z-index: 1;
 }
 
+/* Banner content animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .banner-content {
   z-index: 2;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Section title */
+.section-title {
+  letter-spacing: 1px;
+}
+
+/* Card sản phẩm nổi bật */
+.card-img-top {
+  background: #f6f9ff;
 }
 

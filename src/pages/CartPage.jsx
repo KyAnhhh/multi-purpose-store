@@ -5,7 +5,7 @@ import "../assets/styles/CartPage.css";
 
 function CartPage() {
   const { cartItems, addToCart, decreaseQuantity , removeFromCart } = useCart();
-  const navigate = useNavigate(); // ✅ hook điều hướng
+  const navigate = useNavigate(); // hook điều hướng
 
   const handlePlus = (item) => {
     addToCart(item); // tăng thêm 1 sản phẩm (nó sẽ tự gộp trong context)
@@ -21,13 +21,13 @@ const handleMinus = (item) => {
   };
 
    const handleGoBack = () => {
-    navigate(-1); // ✅ quay lại trang trước
+    navigate(-1); // quay lại trang trước
   };
 
   return (
     <div className="cart-container">
-      {/* ✅ Nút quay lại */}
-      <button className="btn btn-secondary mb-3" onClick={handleGoBack}>
+      {/* Nút quay lại */}
+      <button className="btn btn-success mb-3" onClick={handleGoBack}>
         <i className="bi bi-arrow-left me-2"></i> Quay lại
       </button>
       <h1 className="title">Giỏ hàng của bạn</h1>

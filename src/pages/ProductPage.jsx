@@ -50,11 +50,9 @@ const handleAddToCart = (product) => {
     <>
      <div>
      <Link to="/cart" className="btn btn-success mb-3">🛒 Xem giỏ hàng</Link>
-      <h1 className="title">Danh sách sản phẩm</h1>
     <ProductList products={products} loading={loading} onAddToCart={handleAddToCart} />
     </div>
      <div className="pagination">
-  <h3>Trang:</h3>
   {Array.from({ length: quantityPage }, (_, i) => i)
     .filter(index => Math.abs(index - pageActive) <= 2) // Hiển thị trang hiện tại ±2
     .map((index) => (

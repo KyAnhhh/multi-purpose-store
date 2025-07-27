@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import ProductList from "../components/ProductList";
 import "../assets/styles/ProductPage.css";
@@ -49,7 +48,6 @@ const handleAddToCart = (product) => {
   return (
     <>
      <div>
-     <Link to="/cart" className="btn btn-success mb-3">🛒 Xem giỏ hàng</Link>
     <ProductList products={products} loading={loading} onAddToCart={handleAddToCart} />
     </div>
      <div className="pagination">

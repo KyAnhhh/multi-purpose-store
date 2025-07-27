@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 import "../assets/styles/MainContent.css";
 
 const services = [
@@ -186,7 +186,7 @@ function MainContent() {
                       ${product.price}
                     </span>
                     <Link
-                      to={`/products/${product.id}`}
+                      to={`/products/`}
                       className="btn btn-outline-primary rounded-pill mt-auto"
                     >
                       Xem chi tiết

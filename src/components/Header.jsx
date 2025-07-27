@@ -8,7 +8,7 @@ const Header = () => {
       <div className="container-fluid px-4">
         {/* Logo */}
         <NavLink className="navbar-brand fw-bold text-white fs-4" to="/">
-          <i className="bi bi-shop me-2"></i>StoreLogo
+          <i className="bi bi-shop me-2"></i>MultiStore
         </NavLink>
 
         {/* Toggle button (mobile) */}
